@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}Запись{% endblock %}
+{% block header %}Страница записи{% endblock %}
+
+{% block content %}
+    <main role="main" class="container">
+        <div class="row">
+            {% include "profile_item.html" %}
+            <div class="col-md-9">
+                {% include "post_item.html" with post=post %}
+                {% include 'comments.html' with form=form comments=comments %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
